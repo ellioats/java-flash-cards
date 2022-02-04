@@ -6,6 +6,7 @@ You should be prompted to provide a file path to the .txt file. Afterwards, you 
 
 Example of .txt file containing flash cards
 
+(Switch to raw view to see the table properly)
 INDEX     CONTENT
 1         QUESTION1
 2         ANSWER1
