@@ -19,6 +19,7 @@ import java.util.Scanner;
 import randomizer.Randomizer;
 import userinteraction.Display;
 import userinteraction.FileReader;
+import gui.window; // imports gui window
 
 public class FlashCards {
 	
@@ -43,6 +44,9 @@ public class FlashCards {
 		
 		Randomizer r = new Randomizer();
 		Display d = new Display();
+
+		window w = new window();
+
 		
 		int[] questionOrder = r.generateNewNums((questions.size())); // initalizes the question order 
 		// TODO: bug with questionOrder, first and last index are not swapped... problem most likely in Mixer or Randomizer class
@@ -55,18 +59,20 @@ public class FlashCards {
 			//System.out.println("DEBUG: questionOrder list size " + questionOrder.length);
 			//System.out.println("DEBUG: questions.size value is "+ questions.size());
 			
-			d.typeString(questions.get(questionOrder[index]));
-			d.typeString("");
-			scan.nextLine();
+			d.typeString(questions.get(questionOrder[index])); // prints the first question in the questions list, 
+			d.typeString(""); // creates empty line
+			scan.nextLine(); // program waits for user input
 			
-			System.out.println(answers.get(questionOrder[index]));
+			System.out.println(answers.get(questionOrder[index])); // prints the corresponding answer with the same index
+
+			w.setCardData(questions.get(questionOrder[index]), (answers.get(questionOrder[index])));
+
 			if (index != 0) {
 				System.out.println("\n\n\n\n\n\n\n\n\n");
 			}
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			// encapsulate this into for loop with # of iterations as parameter

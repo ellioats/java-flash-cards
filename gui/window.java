@@ -72,7 +72,7 @@ public class window extends JFrame {
     }
 
     // dynamically set font size based on argument length
-    public void setCardQuestion(String q, String a) {
+    public void setCardData(String q, String a) {
         currentCard.setText(q); // sets question text
         currentAnswer.setText(a); // sets answer text
         this.getContentPane().add(panel); // resets current pane
