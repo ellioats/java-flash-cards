@@ -28,11 +28,13 @@ public class window extends JFrame {
         this.setTitle("Flashcards");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setFocusable(true);
-        this.setResizable(false);
+        this.setResizable(true);
         this.setVisible(true);
 
         panel = new JPanel();
         panel.setLayout(box); 
+        panel.setSize(250,250);
+
 
         this.addKeyListener(new KeyListener() {
 
@@ -75,6 +77,12 @@ public class window extends JFrame {
     public void setCardData(String q, String a) {
         currentCard.setText(q); // sets question text
         currentAnswer.setText(a); // sets answer text
+
+        System.out.println("current question: " + q);
+
+        panel.add(currentCard);
+        panel.add(currentAnswer);
+
         this.getContentPane().add(panel); // resets current pane
         this.revalidate(); // revals
         this.repaint(); // repaints panel
