@@ -6,7 +6,10 @@
 // The purpose of this class is to intake 2 string lists from the fileio class (impliment getter methods in fileio class), and a random number from the randomizer class, 
 // and display them sequentially to the user. 
 
- 
+
+//TODO: add gui class and forward current flashcard variables to JLabel variables 
+	// also add method to detect length of current string and dynamically change font size 
+	
 package main;
 
 import java.io.FileNotFoundException;
