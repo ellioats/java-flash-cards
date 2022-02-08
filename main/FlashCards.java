@@ -6,7 +6,6 @@
 // The purpose of this class is to intake 2 string lists from the fileio class (impliment getter methods in fileio class), and a random number from the randomizer class, 
 // and display them sequentially to the user. 
 
-
 //TODO: add gui class and forward current flashcard variables to JLabel variables 
 	// also add method to detect length of current string and dynamically change font size 
 
@@ -58,6 +57,7 @@ public class FlashCards {
 			
 			//System.out.println("DEBUG: questionOrder list size " + questionOrder.length);
 			//System.out.println("DEBUG: questions.size value is "+ questions.size());
+			w.setCardData(questions.get(questionOrder[index]), (answers.get(questionOrder[index])));
 			
 			d.typeString(questions.get(questionOrder[index])); // prints the first question in the questions list, 
 			d.typeString(""); // creates empty line
@@ -65,7 +65,7 @@ public class FlashCards {
 			
 			System.out.println(answers.get(questionOrder[index])); // prints the corresponding answer with the same index
 
-			w.setCardData(questions.get(questionOrder[index]), (answers.get(questionOrder[index])));
+			
 
 			if (index != 0) {
 				System.out.println("\n\n\n\n\n\n\n\n\n");

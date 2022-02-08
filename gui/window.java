@@ -18,8 +18,8 @@ public class window extends JFrame {
     //global vars
 
     private JPanel panel; 
-    private JLabel currentCard;
-    private JLabel currentAnswer;
+    private JLabel currentCard = new JLabel("q");
+    private JLabel currentAnswer = new JLabel("a");
 
 
     public window() {
@@ -34,6 +34,10 @@ public class window extends JFrame {
         panel = new JPanel();
         panel.setLayout(box); 
         panel.setSize(250,250);
+        
+
+
+
 
 
         this.addKeyListener(new KeyListener() {
@@ -75,6 +79,9 @@ public class window extends JFrame {
 
     // dynamically set font size based on argument length
     public void setCardData(String q, String a) {
+
+
+
         currentCard.setText(q); // sets question text
         currentAnswer.setText(a); // sets answer text
 
@@ -83,7 +90,7 @@ public class window extends JFrame {
         panel.add(currentCard);
         panel.add(currentAnswer);
 
-        this.getContentPane().add(panel); // resets current pane
+        this.getContentPane().add(panel); // adds panel to frame
         this.revalidate(); // revals
         this.repaint(); // repaints panel
     }
