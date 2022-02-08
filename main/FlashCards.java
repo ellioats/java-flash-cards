@@ -9,7 +9,7 @@
 
 //TODO: add gui class and forward current flashcard variables to JLabel variables 
 	// also add method to detect length of current string and dynamically change font size 
-	
+
 package main;
 
 import java.io.FileNotFoundException;
@@ -44,7 +44,8 @@ public class FlashCards {
 		Randomizer r = new Randomizer();
 		Display d = new Display();
 		
-		int[] questionOrder = r.generateNewNums((questions.size()));
+		int[] questionOrder = r.generateNewNums((questions.size())); // initalizes the question order 
+		// TODO: bug with questionOrder, first and last index are not swapped... problem most likely in Mixer or Randomizer class
 		
 		// while loop with # of iterations depending on the size of the question order int array
 		while(index < questionOrder.length) {
