@@ -12,7 +12,7 @@ import javax.swing.*;
 public class window extends JFrame {
     
     // layout mgrs
-    private BoxLayout box = new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS); 
+    //private BoxLayout box = new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS); 
 
 
     //global vars
@@ -24,7 +24,7 @@ public class window extends JFrame {
 
     public window() {
 
-        this.setSize(300,300);
+        this.setSize(1200,300);
         this.setTitle("Flashcards");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setFocusable(true);
@@ -32,13 +32,9 @@ public class window extends JFrame {
         this.setVisible(true);
 
         panel = new JPanel();
-        panel.setLayout(box); 
         panel.setSize(250,250);
         
-
-
-
-
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
         this.addKeyListener(new KeyListener() {
 
@@ -77,7 +73,9 @@ public class window extends JFrame {
         });
     }
 
-    // dynamically set font size based on argument length
+    // TODO: dynamically set font size based on argument length
+
+    // for debug only, make a method that can set the question and answer individually 
     public void setCardData(String q, String a) {
 
 
@@ -95,6 +93,37 @@ public class window extends JFrame {
         this.repaint(); // repaints panel
     }
 
+    public void setCardVal(String text, boolean choice) {
+        // String text is for the data
+        // boolean choice is the choice of which (the currentcard or currentanswer) labels to assign the text value to
+            // true is for answer
+            // false is for question
 
+        if (choice) {
+            currentAnswer.setText(text + "\n");
+        }
+        else {
+            currentCard.setText(text + "\n");
+        }
 
+        panel.add(currentCard);
+        panel.add(currentAnswer);
+
+        this.getContentPane().add(panel); // adds panel to frame
+        this.revalidate(); // revals
+        this.repaint(); // repaints panel
+
+    }
+
+    public void resetCardVal() {
+        currentAnswer.setText("");
+        currentCard.setText("");
+
+        panel.add(currentCard);
+        panel.add(currentAnswer);
+
+        this.getContentPane().add(panel); // adds panel to frame
+        this.revalidate(); // revals
+        this.repaint(); // repaints panel
+    }
 }

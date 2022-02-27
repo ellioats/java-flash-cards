@@ -50,7 +50,7 @@ public class FileReader {
 	public ArrayList<String> fileToList(boolean evenOrOdd) throws FileNotFoundException {
 		
 		scan = new Scanner(f);
-
+		
 		int counter = 0;
 		
 		ArrayList<String> fin = new ArrayList<String>();

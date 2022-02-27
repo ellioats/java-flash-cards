@@ -38,7 +38,7 @@ public class Mixer {
 	public int[] shifter(int[] order, int pick) {
 		Stack<Integer> s = new Stack<Integer>();
 		for (int i : order) {
-			if (i % pick == 0) {
+			if (i % pick == 0) { 
 				//System.out.println("Currently pushing: " + i);
 				s.push(i);
 			}

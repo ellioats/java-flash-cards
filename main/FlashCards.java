@@ -57,28 +57,31 @@ public class FlashCards {
 			
 			//System.out.println("DEBUG: questionOrder list size " + questionOrder.length);
 			//System.out.println("DEBUG: questions.size value is "+ questions.size());
-			w.setCardData(questions.get(questionOrder[index]), (answers.get(questionOrder[index])));
+
+			//w.setCardData(questions.get(questionOrder[index]), (answers.get(questionOrder[index])));
+			w.setCardVal(questions.get(questionOrder[index]), false);
 			
 			d.typeString(questions.get(questionOrder[index])); // prints the first question in the questions list, 
 			d.typeString(""); // creates empty line
 			scan.nextLine(); // program waits for user input
 			
 			System.out.println(answers.get(questionOrder[index])); // prints the corresponding answer with the same index
-
+			w.setCardVal(answers.get(questionOrder[index]), true);
 			
 
 			if (index != 0) {
 				System.out.println("\n\n\n\n\n\n\n\n\n");
 			}
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			// encapsulate this into for loop with # of iterations as parameter
 			d.returnLoop(19);
 			
-			index++;	
+			index++;
+			w.resetCardVal();
 		}	
 	}
 }
