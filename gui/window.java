@@ -11,6 +11,10 @@ import javax.swing.*;
 
 public class window extends JFrame {
     
+        //TODO check string length for each question / answer + split the strings into two lines if the length exceeds a specific value 
+            
+
+
     // layout mgrs
     //private BoxLayout box = new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS); 
 
